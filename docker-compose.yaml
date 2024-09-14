@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  redis:
+    image: 'redis:7.4.0-alpine'
+    container_name: redis
+    network_mode: host
+    volumes:
+      - './redis-data:/data:rw'
+      - ./redis.conf:/etc/redis/redis.conf:ro
